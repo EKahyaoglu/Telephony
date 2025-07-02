@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg"
+    android:padding="16sp">
+
+    <!-- Logo on the top -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/telephony_logo" />
+
+    <!-- Horizontal line -->
+    <View
+        android:id="@+id/lineDivider"
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="0dp"
+        android:layout_gravity="center"
+        android:background="#000000"
+        android:alpha="0.2"
+        android:layout_marginBottom="0dp" />
+
+    <!-- Guiding text -->
+    <TextView
+        android:id="@+id/guidingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:text="Enter a 10-digit phone number to lookup!"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="@font/roboto_regular"/>
+
+    <!-- Textbox for Number Lookup -->
+    <EditText
+        android:id="@+id/phoneTextbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. 123-456-7890"
+        android:inputType="phone"
+        android:textSize="22sp"
+        android:fontFamily="@font/roboto_regular"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_border"/>
+
+    <!-- Search Button -->
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:text="SEARCH"
+        android:textSize="30sp"
+        android:fontFamily="@font/roboto_regular"/>
+
+    <!-- Result Header Text -->
+    <TextView
+        android:id="@+id/resultHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingTop="16sp"
+        android:layout_gravity="center"
+        android:text="Here's what we could find:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="@font/roboto_regular"
+        android:visibility="visible" />
+
+    <!-- Information from API (REQUEST) - Table to display results -->
+    <TableLayout
+        android:id="@+id/resultTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:visibility="visible"
+        android:layout_marginTop="10dp">
+
+        <!-- Row for Number -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Number:"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+            <TextView
+                android:id="@+id/tableNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+        </TableRow>
+
+        <!-- Row for Valid -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Valid:"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+            <TextView
+                android:id="@+id/tableValid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+        </TableRow>
+
+        <!-- Row for Country -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Country:"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+            <TextView
+                android:id="@+id/tableCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+        </TableRow>
+
+        <!-- Row for Location -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Location:"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+            <TextView
+                android:id="@+id/tableLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+        </TableRow>
+
+        <!-- Row for Carrier -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Carrier:"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+            <TextView
+                android:id="@+id/tableCarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+        </TableRow>
+
+        <!-- Row for Line Type -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Line Type:"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+            <TextView
+                android:id="@+id/tableLineType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="11dp"
+                android:background="@drawable/table_border"/>
+        </TableRow>
+    </TableLayout>
+
+    <!-- Credit Text (Bottom) -->
+    <TextView
+        android:id="@+id/creditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:text="  Developed by Eren Kahyaoglu\nPowered by numlookupapi.com"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="17sp"
+        android:textColor="#000000"/>
+
+</LinearLayout>
